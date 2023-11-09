@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://selvan-s.github.io/user-authentication-frontend/#",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
