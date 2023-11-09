@@ -1,0 +1,22 @@
+.container {
+    max-width: 400px;
+    margin: 3rem auto;
+    background-color: hsl(220, 33%, 98%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    text-align: center;
+}
+label {
+    font-weight: bold;
+}
+.form-control {
+    margin-bottom: 15px;
+}
+.btn-primary {
+    width: 100%;
+    border: none;
+    color: white;
+}
