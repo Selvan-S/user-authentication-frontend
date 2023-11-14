@@ -23,10 +23,7 @@ const Login = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormData({
-      email: "",
-      password: "",
-    });
+    
     const response = await axios.post(`${API_URL}login`, formData);
     console.log(response);
     if (response.data === "Invalid User Name or Password") {
@@ -41,6 +38,11 @@ const Login = () => {
     } else {
       console.log("This is an else part: " + response.data);
     }
+
+    setFormData({
+      email: "",
+      password: "",
+    });
   };
 
   return (
