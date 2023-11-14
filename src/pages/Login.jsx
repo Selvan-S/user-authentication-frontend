@@ -34,9 +34,12 @@ const Login = () => {
     } else if (response.data === "Server Busy") {
       alert("Register your Email ID!");
     } else if (response.status) {
+      console.log(response.data);
       localStorage.setItem("userInfo", JSON.stringify(response.data));
       navigate("/home");
       alert("You are Successfully Logged in");
+    } else {
+      console.log("This is an else part: " + response.data);
     }
   };
 
