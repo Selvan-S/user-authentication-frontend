@@ -28,7 +28,7 @@ const Login = () => {
       password: "",
     });
     const response = await axios.post(`${API_URL}login`, formData);
-    // console.log(response);
+    console.log(response);
     if (response.data === "Invalid User Name or Password") {
       alert("Invalid User Name or Password");
     } else if (response.data === "Server Busy") {

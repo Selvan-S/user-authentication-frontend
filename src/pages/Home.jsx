@@ -8,7 +8,7 @@ const Home = () => {
   const [res, setRes] = useState([]);
   const user = JSON.parse(localStorage.getItem("userInfo"));
   useEffect(() => {
-    // console.log("user token: ", user.token);
+    console.log("user token: ", user.token);
     if (user && user.token) {
       getData(user.token);
     }
@@ -18,23 +18,28 @@ const Home = () => {
     try {
       const config = {
         headers: {
-          "Authorization": "token",
-          "Accept": "application/json",
+          Authorization: "token",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
       };
-      // console.log("This is user.token again :", token);
+      console.log("This is user.token again :", token);
       const response = await axios.get(`${API_URL}home`, config);
-      // console.log("This is an response ", response);
+      console.log("This is an response ", response);
 
       if (response.data === "Invalid Token") {
         alert("Login again");
       } else if (response.data === "Server Busy") {
         alert("Unauthorized access");
       } else if (response.status) {
-        // console.log("response, status and data: "+ response.status +" " + JSON.stringify(response.data));
+        console.log(
+          "response, status and data: " +
+            response.status +
+            " " +
+            JSON.stringify(response.data)
+        );
         setRes(response.data);
-        // console.log("res.name: " + res.name);
+        console.log("res.name: " + res.name);
       }
     } catch (e) {
       console.log(e);
