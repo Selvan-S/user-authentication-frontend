@@ -25,7 +25,7 @@ export const SignUp = () => {
         alert("User already exists");
       }
     } catch (e) {
-      console.log("Erro during registratoin " + e);
+      console.log("Error during registratoin " + e);
     }
 
     setFormData({
@@ -33,7 +33,7 @@ export const SignUp = () => {
       email: "",
       password: "",
     });
-    console.log(formData);
+    // console.log(formData);
   };
   return (
     <Container>

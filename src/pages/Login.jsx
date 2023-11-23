@@ -23,22 +23,19 @@ const Login = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const response = await axios.post(`${API_URL}login`, formData);
-    console.log(response);
+    // console.log(response);
     if (response.data === "Invalid User Name or Password") {
       alert("Invalid User Name or Password");
     } else if (response.data === "Server Busy") {
       alert("Register your Email ID!");
     } else if (response.status) {
-      console.log(response.data);
+      // console.log(response.data);
       localStorage.setItem("userInfo", JSON.stringify(response.data));
       navigate("/home");
       alert("You are Successfully Logged in");
-    } else {
-      console.log("This is an else part: " + response.data);
     }
-
     setFormData({
       email: "",
       password: "",
