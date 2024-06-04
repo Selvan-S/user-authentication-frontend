@@ -3,8 +3,9 @@ import { Container, Form, Button } from "react-bootstrap";
 import "../styles/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import API_URL from "../../config/global";
 export const SignUp = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",

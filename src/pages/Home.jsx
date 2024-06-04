@@ -3,10 +3,10 @@ import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import axios from "axios";
-import API_URL from "../../config/global";
 const Home = () => {
   const [res, setRes] = useState([]);
   const user = JSON.parse(localStorage.getItem("userInfo"));
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     if (user && user.token) {
       getData(user.token);
